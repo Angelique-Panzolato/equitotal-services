@@ -1,0 +1,53 @@
+.admin-sidebar {
+  width: 240px;
+  background: #041c36;
+  color: white;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  min-height: 100vh;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Logo EquiTotal */
+.sidebar-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffe603;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* Navigation */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar-link {
+  color: white;
+  text-decoration: none;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+/* Hover premium */
+.sidebar-link:hover {
+  background: #ffe603;
+  color: #041c36;
+  transform: translateX(6px);
+  box-shadow: 0 0 10px rgba(255, 230, 3, 0.5);
+}
+
+/* Active state (optionnel si tu veux l’ajouter plus tard) */
+.sidebar-link.active {
+  background: #ffe603;
+  color: #041c36;
+  font-weight: 700;
+}

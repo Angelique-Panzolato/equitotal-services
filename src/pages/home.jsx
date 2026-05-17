@@ -27,7 +27,7 @@ export default function Home() {
       </section>
 
       <section className="landing-buttons">
-        <a href="/livret" className="btn-primary">découvrir le livret numérique</a>
+        <a href="/livret-info" className="btn-primary">découvrir le livret numérique</a>
         <a href="/login" className="btn-secondary">se connecter</a>
         <a href="/register" className="btn-tertiary">s’inscrire</a>
       </section>

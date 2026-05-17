@@ -1,0 +1,91 @@
+/* --- CONTAINER --- */
+.edit-container {
+  padding: 20px;
+}
+
+.edit-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #041c36;
+  margin-bottom: 30px;
+}
+
+/* --- CARTE FORMULAIRE --- */
+.edit-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  border-top: 4px solid #ffe603;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  max-width: 500px;
+}
+
+/* --- GROUPES DE CHAMPS --- */
+.edit-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.edit-label {
+  font-weight: 600;
+  color: #041c36;
+  margin-bottom: 8px;
+}
+
+.edit-input {
+  padding: 12px 14px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.edit-input:focus {
+  border-color: #ffe603;
+  box-shadow: 0 0 8px rgba(255, 230, 3, 0.4);
+  outline: none;
+}
+
+/* --- ACTIONS --- */
+.edit-actions {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.edit-btn {
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.3s ease;
+}
+
+/* Bouton Annuler */
+.edit-btn.cancel {
+  background: #b30000;
+  color: white;
+  border-color: #b30000;
+}
+
+.edit-btn.cancel:hover {
+  background: #ff4d4d;
+  border-color: #ff4d4d;
+}
+
+/* Bouton Enregistrer */
+.edit-btn.save {
+  background: #041c36;
+  color: white;
+  border-color: #041c36;
+}
+
+.edit-btn.save:hover {
+  background: #ffe603;
+  color: #041c36;
+  border-color: #ffe603;
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(255, 230, 3, 0.5);
+}

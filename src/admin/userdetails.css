@@ -1,47 +1,48 @@
 /* --- CONTAINER --- */
-.users-container {
+.details-container {
   padding: 20px;
 }
 
-.users-title {
+.details-title {
   font-size: 2rem;
   font-weight: 700;
   color: #041c36;
   margin-bottom: 30px;
 }
 
-/* --- TABLE --- */
-.users-table {
-  width: 100%;
-  border-collapse: collapse;
+/* --- CARTE --- */
+.details-card {
   background: white;
+  padding: 30px;
   border-radius: 12px;
-  overflow: hidden;
+  border-top: 4px solid #ffe603;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
 }
 
-.users-table thead {
-  background: #041c36;
-  color: white;
-}
-
-.users-table th,
-.users-table td {
-  padding: 16px 20px;
-  text-align: left;
-  font-size: 1rem;
-}
-
-.users-table tbody tr {
+/* --- LIGNES --- */
+.details-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
   border-bottom: 1px solid #eee;
-  transition: 0.2s ease;
 }
 
-.users-table tbody tr:hover {
-  background: #f7f9fc;
+.details-row:last-child {
+  border-bottom: none;
 }
 
-/* --- BADGES DE RÔLE --- */
+.details-label {
+  font-weight: 600;
+  color: #041c36;
+}
+
+.details-value {
+  font-weight: 500;
+  color: #333;
+}
+
+/* --- BADGES --- */
 .role-badge {
   padding: 6px 12px;
   border-radius: 6px;
@@ -60,27 +61,24 @@
   color: #1a7f1a;
 }
 
-/* --- CELLULE ACTIONS --- */
-.actions-cell {
+/* --- ACTIONS --- */
+.details-actions {
   display: flex;
-  gap: 10px;
+  gap: 20px;
 }
 
-/* --- BOUTONS --- */
-.users-btn {
-  padding: 8px 14px;
+.details-btn {
+  padding: 10px 20px;
   background: #041c36;
   color: white;
   border: 2px solid #041c36;
-  border-radius: 6px;
-  cursor: pointer;
+  border-radius: 8px;
   font-weight: 600;
-  font-size: 0.9rem;
   text-decoration: none;
   transition: 0.3s ease;
 }
 
-.users-btn:hover {
+.details-btn:hover {
   background: #ffe603;
   color: #041c36;
   border-color: #ffe603;
@@ -88,24 +86,13 @@
   box-shadow: 0 0 10px rgba(255, 230, 3, 0.5);
 }
 
-.users-btn.edit {
+.details-btn.edit {
   background: #4a6cf7;
   border-color: #4a6cf7;
 }
 
-.users-btn.edit:hover {
+.details-btn.edit:hover {
   background: #ffe603;
   color: #041c36;
   border-color: #ffe603;
-}
-
-.users-btn.delete {
-  background: #b30000;
-  border-color: #b30000;
-}
-
-.users-btn.delete:hover {
-  background: #ff4d4d;
-  border-color: #ff4d4d;
-  color: white;
 }

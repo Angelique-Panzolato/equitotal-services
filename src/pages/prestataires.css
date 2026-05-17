@@ -1,21 +1,23 @@
-.userdash-container {
+.prest-container {
   padding: 30px;
 }
 
-.userdash-title {
+.prest-title {
   font-size: 2rem;
   font-weight: 700;
   color: #041c36;
   margin-bottom: 30px;
 }
 
-.userdash-cards {
+/* GRID */
+.prest-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 25px;
 }
 
-.userdash-card {
+/* CARD */
+.prest-card {
   background: white;
   padding: 25px;
   border-radius: 12px;
@@ -25,39 +27,20 @@
   transition: 0.3s ease;
 }
 
-.userdash-card:hover {
+.prest-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
-.card-title {
+.prest-card-title {
   font-size: 1.3rem;
   font-weight: 600;
   color: #041c36;
   margin-bottom: 10px;
 }
 
-.card-value {
+.prest-card-desc {
   font-size: 1rem;
   color: #041c36;
   opacity: 0.8;
-}
-
-.livret-btn {
-  padding: 12px 20px;
-  margin-bottom: 25px;
-  background: #041c36;
-  color: white;
-  border-radius: 8px;
-  border: 2px solid #041c36;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.livret-btn:hover {
-  background: #ffe603;
-  color: #041c36;
-  border-color: #ffe603;
-  transform: translateY(-2px);
 }

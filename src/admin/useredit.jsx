@@ -1,67 +1,68 @@
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { users, updateUser } from "./data/users";
+import "./useredit.css";
 import { useState } from "react";
-import "./users.css";
 
 export default function UserEdit() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const user = users.find((u) => u.id === Number(id));
+  const user = users.find((u) => u.id === parseInt(id));
 
   const [email, setEmail] = useState(user?.email || "");
   const [role, setRole] = useState(user?.role || "user");
 
   if (!user) {
-    return (
-      <div className="users-container">
-        <h1 className="users-title">Utilisateur introuvable</h1>
-        <Link to="/admin/users" className="users-btn">
-          Retour
-        </Link>
-      </div>
-    );
+    return <p>Utilisateur introuvable.</p>;
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-
     updateUser(user.id, { email, role });
-
     navigate("/admin/users");
   }
 
   return (
-    <div className="users-container">
-      <h1 className="users-title">Modifier l’utilisateur</h1>
+    <div className="edit-container">
+      <h1 className="edit-title">Modifier l’utilisateur</h1>
 
-      <form className="user-edit-form" onSubmit={handleSubmit}>
-        <label>Email</label>
-        <input
-          type="email"
-          className="users-input"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+      <form className="edit-card" onSubmit={handleSubmit}>
+        <div className="edit-group">
+          <label className="edit-label">Email</label>
+          <input
+            type="email"
+            className="edit-input"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
 
-        <label>Rôle</label>
-        <select
-          className="users-input"
-          value={role}
-          onChange={(e) => setRole(e.target.value)}
-        >
-          <option value="user">Utilisateur</option>
-          <option value="admin">Administrateur</option>
-        </select>
+        <div className="edit-group">
+          <label className="edit-label">Rôle</label>
+          <select
+            className="edit-input"
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
+          >
+            <option value="user">Utilisateur</option>
+            <option value="admin">Administrateur</option>
+          </select>
+        </div>
 
-        <button type="submit" className="users-btn">
-          Enregistrer
-        </button>
+        <div className="edit-actions">
+          <button
+            type="button"
+            className="edit-btn cancel"
+            onClick={() => navigate("/admin/users")}
+          >
+            Annuler
+          </button>
+
+          <button type="submit" className="edit-btn save">
+            Enregistrer
+          </button>
+        </div>
       </form>
-
-      <Link to="/admin/users" className="users-btn">
-        Retour
-      </Link>
     </div>
   );
 }

@@ -1,0 +1,155 @@
+/* --- CONTAINER GLOBAL (bleu foncé) --- */
+.info-container {
+  background: #0a1a2b;
+  color: white;
+  padding: 40px 20px;
+}
+
+/* --- LOGO --- */
+.info-logo {
+  width: 120px;
+  display: block;
+  margin: 0 auto 30px;
+  opacity: 0.9;
+}
+
+/* --- HERO --- */
+.info-hero {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.info-title {
+  font-size: 36px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  color:#ffe603
+}
+
+.info-subtitle {
+  font-size: 18px;
+  opacity: 0.9;
+  line-height: 1.6;
+  color:#ffe603
+}
+
+/* --- PREMIÈRE SECTION (bleu foncé) --- */
+.info-section {
+  max-width: 700px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.info-text {
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+/* --- SECTIONS BLANCHES À PARTIR D’ICI --- */
+.info-explain,
+.info-pro,
+.info-security,
+.info-owner {
+  background: white;
+  color: #0a1a2b;
+  padding: 40px 20px;
+  margin: 30px 60px ;
+  text-align: center;
+  border-radius: 8px;
+
+}
+
+.info-explain-title,
+.info-pro-title,
+.info-security-title,
+.info-owner-title {
+  font-family: var(--heading);
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.info-explain-text,
+.info-pro-text,
+.info-security-text,
+.info-owner-text {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 800px;
+    border-top:#ffe603 2px solid;
+
+}
+
+/* --- LISTES --- */
+
+.info-divider {
+  height: 40px;
+  background: #0a1a2b;
+}
+
+.info-explain ul,
+.info-pro ol {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+.info-explain li,
+.info-pro li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* --- CTA SECTION (bleu foncé) --- */
+.info-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/* --- FOOTER (bleu foncé) --- */
+.info-footer {
+  background: #0a1a2b;
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+  margin-top: 0;
+    border-top:#ffe603 3px solid;
+
+}
+
+.info-footer-title {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color:#ffe603;
+}
+
+.info-footer-text {
+  max-width: 800px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+.info-footer button {
+  margin-bottom: 20px;
+    border:#fff 2px solid;
+    background-color: #0a1a2b;
+    transition:all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  border: 2px solid #ffe603;
+  background: #ffe603;
+  color: #041c36;
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(255, 230, 3, 0.7); /* glow ON */
+}
+
+
+.info-footer-copyright {
+  font-size: 14px;
+  opacity: 0.7;
+}

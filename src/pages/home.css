@@ -104,22 +104,22 @@
   border: 2px solid #ffe603;
     background: #ffe603;
     color: #041c36;
-    transform: translateY(-2px)
-    transition: all 0.3s ease;
+    transform: translateY(-2px);
+    transition: 0.3s ease;
   }
   .btn-secondary:hover {
   border: 2px solid #ffe603;
     background: #ffe603;
     color: #041c36;
-    transform: translateY(-2px)
-    transition: all 0.3s ease;
+    transform: translateY(-2px);
+    transition: 0.3s ease;
   }
   .btn-tertiary:hover {
     border: 2px solid #ffe603;
     background: #ffe603;
     color: #041c36;
-    transform: translateY(-2px)
-    transition: all 0.3s ease;
+    transform: translateY(-2px);
+    transition: 0.3s ease;
   }
 
 

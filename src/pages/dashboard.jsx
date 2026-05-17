@@ -1,24 +1,45 @@
-import { Link } from "react-router-dom";
 import "./dashboard.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
+  const navigate = useNavigate();
+
   return (
-    <div className="dashboard-container">
-      <h1 className="dashboard-title">Bienvenue dans votre espace</h1>
+    <div className="userdash-container">
 
-      <p className="dashboard-text">
-        Gérez le livret numérique de votre cheval et suivez son évolution au quotidien.
-      </p>
+      <h1 className="userdash-title">Mon espace personnel</h1>
 
-      <div className="dashboard-actions">
-        <Link to="/livret" className="dashboard-button">
-          Accéder au livret
-        </Link>
 
-        <Link to="/livret" className="dashboard-button-secondary">
-          Créer un nouveau livret
-        </Link>
+      <button
+        className="livret-btn"
+        onClick={() => navigate("/livret-numerique")}
+      >
+        Créer le livret numérique de mon cheval
+      </button>
+      <div className="userdash-cards">
+
+        <div className="userdash-card" onClick={() => navigate("/chevaux")}>
+          <h3 className="card-title">Mes chevaux</h3>
+          <p className="card-value">Voir mes chevaux</p>
+        </div>
+
+        <div className="userdash-card" onClick={() => navigate("/prestataires")}>
+          <h3 className="card-title">Mes prestataires santé</h3>
+          <p className="card-value">Vétérinaire, maréchal, ostéo…</p>
+        </div>
+
+        <div className="userdash-card" onClick={() => navigate("/documents")}>
+          <h3 className="card-title">Mes documents</h3>
+          <p className="card-value">Certificats, ordonnances…</p>
+        </div>
+
+        <div className="userdash-card" onClick={() => navigate("/alertes")}>
+          <h3 className="card-title">Mes alertes</h3>
+          <p className="card-value">Vaccins, rappels, soins…</p>
+        </div>
+
       </div>
+
     </div>
   );
 }

@@ -1,0 +1,68 @@
+.livret-container {
+  padding: 30px;
+}
+
+.livret-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #041c36;
+  margin-bottom: 25px;
+}
+
+.livret-section {
+  margin-bottom: 25px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid #e5e5e5;
+}
+
+.livret-subtitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #041c36;
+  margin-bottom: 15px;
+}
+
+.livret-select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d0d0d0;
+  min-width: 260px;
+}
+
+.livret-files {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.livret-file-item {
+  font-size: 0.95rem;
+  color: #041c36;
+  opacity: 0.85;
+}
+
+.livret-analyse-btn {
+  padding: 10px 18px;
+  background: #041c36;
+  color: white;
+  border-radius: 8px;
+  border: 2px solid #041c36;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.livret-analyse-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.livret-analyse-btn:not(:disabled):hover {
+  background: #ffe603;
+  color: #041c36;
+  border-color: #ffe603;
+  transform: translateY(-2px);
+}

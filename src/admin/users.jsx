@@ -30,12 +30,20 @@ export default function Users() {
             <tr key={user.id}>
               <td>{user.id}</td>
               <td>{user.email}</td>
-              <td>{user.role}</td>
               <td>
-                <Link
-                  to={`/admin/users/${user.id}`}
-                  className="users-btn"
+                <span
+                  className={
+                    user.role === "admin"
+                      ? "role-badge admin"
+                      : "role-badge user"
+                  }
                 >
+                  {user.role}
+                </span>
+              </td>
+
+              <td className="actions-cell">
+                <Link to={`/admin/users/${user.id}`} className="users-btn">
                   Voir
                 </Link>
 
