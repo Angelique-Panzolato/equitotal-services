@@ -53,6 +53,11 @@ export default function Login() {
           Se connecter
         </button>
       </form>
+
+      <div className="login-info">
+        <img src="src/assets/logo.png" alt="Logo EquiTotal" className="login-logo" />
+        <p>Bienvenue sur le Livret Numérique d'EquiTotal Services</p>
+      </div>  
     </div>
   );
 }

@@ -111,3 +111,22 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+/* Breakpoints globaux */
+@media (max-width: 1024px) {
+  :root {
+    --radius: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --radius: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --radius: 6px;
+  }
+}

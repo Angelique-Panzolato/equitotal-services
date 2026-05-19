@@ -1,3 +1,7 @@
+#root{
+background-color: #041c36;
+}
+
 .register-container {
   max-width: 450px;
   margin: 0 auto;
@@ -6,15 +10,18 @@
 }
 
 .register-title {
-  font-size: 2.2rem;
-  margin-bottom: 10px;
+  font-size: 36px;
+  text-transform: uppercase;
+  margin-top: 20%;
   font-weight: 700;
+  color: #ffe603
 }
 
 .register-subtitle {
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-  color: #555;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #fff;
+  margin-top: 10%
 }
 
 .register-form {
@@ -22,6 +29,11 @@
   flex-direction: column;
   gap: 15px;
   text-align: left;
+  background-color: #fff;
+  border-radius: 24px;
+  margin-top: 20%;
+  color:#041c36
+
 }
 
 .register-form label {
@@ -30,7 +42,7 @@
 
 .register-form input {
   padding: 12px;
-  border: 1px solid #ccc;
+  border: 1px solid #fff;
   border-radius: 6px;
   font-size: 1rem;
 }
@@ -38,8 +50,8 @@
 .register-button {
   margin-top: 10px;
   padding: 14px;
-  background-color: #4a6cf7;
-  color: white;
+  background-color: #ffe603;
+  color: #041c36;
   border: none;
   border-radius: 8px;
   font-size: 1.1rem;
@@ -49,16 +61,53 @@
 }
 
 .register-button:hover {
-  background-color: #3a59d6;
+  border: #041c36 2px solid;
 }
 
 .register-login {
   margin-top: 20px;
-  font-size: 0.95rem;
+  font-size: 1.2rem;
+  color:#fff;
 }
 
 .register-login a {
-  color: #4a6cf7;
+  color: #ffe603;
   font-weight: 600;
   text-decoration: none;
+}
+
+/* Responsive Register */
+@media (max-width: 768px) {
+  .register-form {
+    width: 90%;
+    padding: 30px;
+  }
+
+  .register-title {
+    font-size: 22px;
+  }
+
+  .register-subtitle {
+    font-size: 13px;
+  }
+
+  .register-form input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .register-button {
+    padding: 12px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-form {
+    padding: 20px;
+  }
+
+  .register-title {
+    font-size: 20px;
+  }
 }
