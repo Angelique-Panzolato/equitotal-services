@@ -1,19 +1,26 @@
+/* ────────────────────────────────────────────── */
+/*              CHEVAUX — MOBILE FIRST            */
+/* ────────────────────────────────────────────── */
+
+/* Container */
 .chevaux-container {
-  padding: 30px;
+  padding: 16px; /* mobile */
 }
 
+/* Titre */
 .chevaux-title {
-  font-size: 2rem;
+  font-size: 1.6rem; /* mobile */
   font-weight: 700;
   color: #041c36;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  text-align: center; /* mobile */
 }
 
 /* GRID */
 .chevaux-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
+  grid-template-columns: 1fr; /* mobile = 1 colonne */
+  gap: 20px;
 }
 
 /* CARD */
@@ -35,7 +42,7 @@
 /* IMAGE */
 .cheval-image-wrapper {
   width: 100%;
-  height: 180px;
+  height: 160px; /* mobile */
   overflow: hidden;
 }
 
@@ -47,18 +54,76 @@
 
 /* INFO */
 .cheval-info {
-  padding: 20px;
+  padding: 16px; /* mobile */
 }
 
 .cheval-nom {
-  font-size: 1.4rem;
+  font-size: 1.2rem; /* mobile */
   font-weight: 700;
   color: #041c36;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .cheval-detail {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #041c36;
   opacity: 0.8;
+}
+
+/* ────────────────────────────────────────────── */
+/*                     TABLETTE                   */
+/* ────────────────────────────────────────────── */
+
+@media (min-width: 768px) {
+  .chevaux-container {
+    padding: 24px;
+  }
+
+  .chevaux-title {
+    font-size: 1.8rem;
+    text-align: left;
+  }
+
+  .chevaux-grid {
+    grid-template-columns: repeat(2, 1fr); /* tablette = 2 colonnes */
+    gap: 25px;
+  }
+
+  .cheval-image-wrapper {
+    height: 180px;
+  }
+
+  .cheval-info {
+    padding: 20px;
+  }
+
+  .cheval-nom {
+    font-size: 1.3rem;
+  }
+}
+
+/* ────────────────────────────────────────────── */
+/*                     DESKTOP                    */
+/* ────────────────────────────────────────────── */
+
+@media (min-width: 1024px) {
+  .chevaux-container {
+    padding: 32px;
+  }
+
+  .chevaux-title {
+    font-size: 2rem;
+  }
+
+  .chevaux-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* desktop flexible */
+  }
+
+  .cheval-image-wrapper {
+    height: 200px;
+  }
+
+  .cheval-info {
+    padding: 24px;
+  }
 }

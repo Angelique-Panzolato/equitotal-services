@@ -1,0 +1,140 @@
+/* ────────────────────────────────────────────── */
+/*                AIDE — MOBILE FIRST             */
+/* ────────────────────────────────────────────── */
+
+.aide-container {
+  padding: 16px; /* mobile */
+  max-width: 900px;
+  margin: 0 auto;
+  color: #041c36;
+}
+
+.aide-title {
+  font-size: 1.8rem; /* mobile */
+  font-weight: 800;
+  text-align: center;
+  color: #ffe603;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.aide-intro {
+  text-align: center;
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 25px;
+}
+
+/* SECTIONS */
+.aide-section {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px; /* mobile */
+  margin-bottom: 20px;
+  border: 2px solid #ffe603;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
+
+.aide-section-title {
+  font-size: 1.3rem; /* mobile */
+  font-weight: 700;
+  color: #041c36;
+  margin-bottom: 12px;
+}
+
+.aide-subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 15px;
+  margin-bottom: 8px;
+  color: #041c36;
+}
+
+.aide-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.aide-list {
+  margin-left: 18px;
+  margin-top: 8px;
+}
+
+.aide-list li {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* LINKS */
+.aide-link {
+  color: #ffe603;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.aide-link:hover {
+  text-decoration: underline;
+}
+
+/* CONTACT */
+.aide-contact {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #041c36;
+  margin-top: 10px;
+}
+
+/* ────────────────────────────────────────────── */
+/*                     TABLETTE                   */
+/* ────────────────────────────────────────────── */
+
+@media (min-width: 768px) {
+  .aide-container {
+    padding: 24px;
+  }
+
+  .aide-title {
+    font-size: 2rem;
+  }
+
+  .aide-section {
+    padding: 28px;
+  }
+
+  .aide-section-title {
+    font-size: 1.5rem;
+  }
+
+  .aide-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .aide-text,
+  .aide-list li {
+    font-size: 1rem;
+  }
+}
+
+/* ────────────────────────────────────────────── */
+/*                     DESKTOP                    */
+/* ────────────────────────────────────────────── */
+
+@media (min-width: 1024px) {
+  .aide-container {
+    padding: 32px;
+  }
+
+  .aide-title {
+    font-size: 2.2rem;
+  }
+
+  .aide-section {
+    padding: 32px;
+  }
+
+  .aide-section-title {
+    font-size: 1.6rem;
+  }
+}

@@ -1,51 +1,64 @@
+/* ────────────────────────────────────────────── */
+/*           LIVRET NUMÉRIQUE — MOBILE FIRST      */
+/* ────────────────────────────────────────────── */
+
+/* Container */
 .livret-container {
-  padding: 30px;
+  padding: 16px; /* mobile */
 }
 
+/* Titre */
 .livret-title {
-  font-size: 2rem;
+  font-size: 1.6rem; /* mobile */
   font-weight: 700;
   color: #041c36;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+  text-align: center; /* mobile */
 }
 
+/* Section */
 .livret-section {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   background: white;
-  padding: 20px;
+  padding: 16px; /* mobile */
   border-radius: 12px;
   border: 2px solid #e5e5e5;
 }
 
+/* Sous‑titre */
 .livret-subtitle {
-  font-size: 1.2rem;
+  font-size: 1.1rem; /* mobile */
   font-weight: 600;
   color: #041c36;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
+/* Select */
 .livret-select {
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #d0d0d0;
-  min-width: 260px;
+  width: 100%; /* mobile */
+  max-width: 260px;
 }
 
+/* Liste des fichiers */
 .livret-files {
-  margin-top: 15px;
+  margin-top: 12px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .livret-file-item {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #041c36;
   opacity: 0.85;
 }
 
+/* Bouton analyse */
 .livret-analyse-btn {
-  padding: 10px 18px;
+  padding: 10px 16px; /* mobile */
   background: #041c36;
   color: white;
   border-radius: 8px;
@@ -53,6 +66,10 @@
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s ease;
+  font-size: 0.95rem;
+  width: 100%; /* mobile */
+  max-width: 260px;
+  text-align: center;
 }
 
 .livret-analyse-btn:disabled {
@@ -65,4 +82,61 @@
   color: #041c36;
   border-color: #ffe603;
   transform: translateY(-2px);
+}
+
+/* ────────────────────────────────────────────── */
+/*                     TABLETTE                   */
+/* ────────────────────────────────────────────── */
+
+@media (min-width: 768px) {
+  .livret-container {
+    padding: 24px;
+  }
+
+  .livret-title {
+    font-size: 1.8rem;
+    text-align: left;
+  }
+
+  .livret-section {
+    padding: 20px;
+    margin-bottom: 25px;
+  }
+
+  .livret-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .livret-analyse-btn {
+    width: auto;
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* ────────────────────────────────────────────── */
+/*                     DESKTOP                    */
+/* ────────────────────────────────────────────── */
+
+@media (min-width: 1024px) {
+  .livret-container {
+    padding: 32px;
+  }
+
+  .livret-title {
+    font-size: 2rem;
+  }
+
+  .livret-section {
+    padding: 24px;
+  }
+
+  .livret-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .livret-analyse-btn {
+    padding: 12px 24px;
+    font-size: 1.05rem;
+  }
 }

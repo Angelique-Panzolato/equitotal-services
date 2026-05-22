@@ -1,40 +1,47 @@
+/* ────────────────────────────────────────────── */
+/*         USER EDIT — MOBILE FIRST               */
+/* ────────────────────────────────────────────── */
+
 /* --- CONTAINER --- */
 .edit-container {
-  padding: 20px;
+  padding: 16px; /* mobile */
 }
 
 .edit-title {
-  font-size: 2rem;
+  font-size: 1.6rem; /* mobile */
   font-weight: 700;
   color: #041c36;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  text-align: center; /* mobile */
 }
 
 /* --- CARTE FORMULAIRE --- */
 .edit-card {
   background: white;
-  padding: 30px;
+  padding: 20px; /* mobile */
   border-radius: 12px;
   border-top: 4px solid #ffe603;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-  max-width: 500px;
+  max-width: 100%; /* mobile = full width */
+  margin: 0 auto;
 }
 
 /* --- GROUPES DE CHAMPS --- */
 .edit-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .edit-label {
   font-weight: 600;
   color: #041c36;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
 }
 
 .edit-input {
-  padding: 12px 14px;
+  padding: 10px 12px; /* mobile */
   border: 2px solid #ddd;
   border-radius: 8px;
   font-size: 1rem;
@@ -50,17 +57,20 @@
 /* --- ACTIONS --- */
 .edit-actions {
   display: flex;
-  gap: 20px;
+  flex-direction: column; /* mobile */
+  gap: 12px;
   margin-top: 20px;
 }
 
 .edit-btn {
-  padding: 12px 20px;
+  padding: 10px 16px; /* mobile */
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
   border: 2px solid transparent;
   transition: 0.3s ease;
+  text-align: center;
+  font-size: 0.95rem;
 }
 
 /* Bouton Annuler */
@@ -89,3 +99,36 @@
   transform: translateY(-2px);
   box-shadow: 0 0 10px rgba(255, 230, 3, 0.5);
 }
+
+/* ────────────────────────────────────────────── */
+/*                     TABLETTE                   */
+/* ────────────────────────────────────────────── */
+
+@media (min-width: 768px) {
+  .edit-container {
+    padding: 24px;
+  }
+
+  .edit-title {
+    font-size: 1.8rem;
+    text-align: left;
+  }
+
+  .edit-card {
+    padding: 28px;
+    max-width: 500px; /* tablette */
+  }
+
+  .edit-actions {
+    flex-direction: row; /* tablette = boutons en ligne */
+    justify-content: flex-start;
+    gap: 16px;
+  }
+
+  .edit-btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+}
+
+/

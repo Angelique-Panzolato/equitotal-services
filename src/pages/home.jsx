@@ -33,7 +33,7 @@ export default function Home() {
       </section>
 
       <footer className="landing-footer">
-        <a className="footer-link">aide</a>
+        <a href="/aide" className="footer-link">Aide</a>
         <a className="footer-link">conditions</a>
       </footer>
 

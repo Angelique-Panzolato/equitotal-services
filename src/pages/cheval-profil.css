@@ -1,47 +1,107 @@
+/* ────────────────────────────────────────────── */
+/*           CHEVAL PROFIL — MOBILE FIRST         */
+/* ────────────────────────────────────────────── */
+
+/* Container */
 .profil-container {
-  padding: 30px;
+  padding: 16px; /* mobile */
 }
 
+/* Titre */
 .profil-title {
-  font-size: 2rem;
+  font-size: 1.6rem; /* mobile */
   font-weight: 700;
   color: #041c36;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  text-align: center; /* mobile */
 }
 
-/* GRID 2×2 */
+/* GRID */
 .profil-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 25px;
+  grid-template-columns: 1fr; /* mobile = 1 colonne */
+  gap: 20px;
 }
 
-/* CARD STYLE */
+/* CARD */
 .profil-card {
   background: white;
-  padding: 25px;
+  padding: 20px; /* mobile */
   border-radius: 12px;
   border: 4px solid #ffe603;
   box-shadow: 0 4px 14px rgba(0,0,0,0.08);
 }
 
+/* Titres de carte */
 .card-title {
-  font-size: 1.3rem;
+  font-size: 1.2rem; /* mobile */
   font-weight: 700;
   color: #041c36;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
+/* Ligne principale */
 .card-line {
   font-size: 1rem;
   font-weight: 600;
   color: #041c36;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
+/* Sous‑ligne */
 .card-sub {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #041c36;
   opacity: 0.8;
-  margin-left: 10px;
+  margin-left: 8px;
+}
+
+/* ────────────────────────────────────────────── */
+/*                     TABLETTE                   */
+/* ────────────────────────────────────────────── */
+
+@media (min-width: 768px) {
+  .profil-container {
+    padding: 24px;
+  }
+
+  .profil-title {
+    font-size: 1.8rem;
+    text-align: left;
+  }
+
+  .profil-grid {
+    grid-template-columns: repeat(2, 1fr); /* tablette = 2 colonnes */
+    gap: 25px;
+  }
+
+  .profil-card {
+    padding: 24px;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+  }
+}
+
+/* ────────────────────────────────────────────── */
+/*                     DESKTOP                    */
+/* ────────────────────────────────────────────── */
+
+@media (min-width: 1024px) {
+  .profil-container {
+    padding: 32px;
+  }
+
+  .profil-title {
+    font-size: 2rem;
+  }
+
+  .profil-card {
+    padding: 28px;
+  }
+
+  .profil-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* desktop flexible */
+  }
 }

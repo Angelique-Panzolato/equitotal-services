@@ -7,6 +7,7 @@ import Register from "./pages/register";
 import Dashboard from "./pages/dashboard";
 import Logout from "./pages/logout";
 import LivretInfo from "./pages/livret-info";
+import Aide from "./pages/aide";
 
 // pages Chevaux (Espace utilisateur)
 import Chevaux from "./pages/chevaux"; 
@@ -52,6 +53,8 @@ function App() {
         {/* Page d’accueil */}
         <Route path="/" element={<Home />} />
 
+          {/* Page d’aide */} 
+        <Route path="/aide" element={<Aide />} /> 
         {/* Livret Info */}
         <Route path="/livret-info" element={<LivretInfo />} />
 

@@ -1,57 +1,64 @@
+/* ────────────────────────────────────────────── */
+/*              HOME / LANDING — MOBILE FIRST     */
+/* ────────────────────────────────────────────── */
+
 .landing-container {
   min-height: 100vh;
-  background: #041c36; /* bleu profond premium */
+  background: #041c36;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 40px 20px;
+  padding: 20px 16px; /* mobile */
 }
+
 /* LOGO */
 .landing-logo {
-  max-width: 100px;
+  max-width: 80px; /* mobile */
   margin: 0 auto;
 }
+
 /* HERO */
 .landing-hero {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 30px;
   position: relative;
 }
 
 .landing-title {
-  font-size: 30px;
-  font-weight: 500;
+  font-size: 1.6rem; /* mobile */
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin-bottom: 30px;
-  color:#ffe603; /* jaune premium */line-height: 1.2;
+  margin-bottom: 20px;
+  color: #ffe603;
+  line-height: 1.2;
 }
 
 .landing-subtitle {
-  font-size: 24px;
+  font-size: 1.1rem; /* mobile */
   opacity: 0.9;
 }
 
 /* ICON */
 .home-icon {
-  max-width: 400px;
+  max-width: 240px; /* mobile */
   margin: 20px auto;
 }
 
 /* SECTION TEXTE */
 .home-section {
-  max-width: 700px;
-  margin: 40px auto 0;
+  max-width: 600px;
+  margin: 30px auto 0;
   text-align: center;
-  padding: 0 20px;
+  padding: 0 10px;
 }
 
 .home-text {
-  font-size: 18px;
+  font-size: 1rem; /* mobile */
   line-height: 1.6;
   color: #e6e6e6;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   opacity: 0.9;
 }
 
@@ -59,76 +66,40 @@
 .landing-buttons {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  max-width: 300px;
-  margin: 40px auto;
+  gap: 12px;
+  max-width: 260px; /* mobile */
+  margin: 30px auto;
 }
 
-.btn-primary {
-  border: 2px solid #fff;
-  color: #fff;
-  padding: 14px 20px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 0.8rem;
-}
-
-.btn-secondary {
-  border: 2px solid #fff;
-  color: #fff;
-  padding: 14px 20px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 700;
-  text-align: center;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-}
-
+.btn-primary,
+.btn-secondary,
 .btn-tertiary {
   border: 2px solid #fff;
-  padding: 12px 20px;
+  color: #fff;
+  padding: 12px 16px; /* mobile */
   border-radius: 12px;
   text-decoration: none;
   font-weight: 700;
-  color: #fff;
+  text-transform: uppercase;
   text-align: center;
   font-size: 0.8rem;
-  text-transform: uppercase;
+  transition: 0.3s ease;
 }
 
-.btn-primary:hover {
-  border: 2px solid #ffe603;
-    background: #ffe603;
-    color: #041c36;
-    transform: translateY(-2px);
-    transition: 0.3s ease;
-  }
-  .btn-secondary:hover {
-  border: 2px solid #ffe603;
-    background: #ffe603;
-    color: #041c36;
-    transform: translateY(-2px);
-    transition: 0.3s ease;
-  }
-  .btn-tertiary:hover {
-    border: 2px solid #ffe603;
-    background: #ffe603;
-    color: #041c36;
-    transform: translateY(-2px);
-    transition: 0.3s ease;
-  }
-
-
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-tertiary:hover {
+  border-color: #ffe603;
+  background: #ffe603;
+  color: #041c36;
+  transform: translateY(-2px);
+}
 
 /* FOOTER */
 .landing-footer {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 16px;
   opacity: 0.7;
   margin-bottom: 20px;
 }
@@ -136,5 +107,69 @@
 .footer-link {
   color: #fff;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 0.8rem;
+}
+
+/* ────────────────────────────────────────────── */
+/*                     TABLETTE                   */
+/* ────────────────────────────────────────────── */
+
+@media (min-width: 768px) {
+  .landing-container {
+    padding: 40px 30px;
+  }
+
+  .landing-logo {
+    max-width: 100px;
+  }
+
+  .landing-title {
+    font-size: 2rem;
+  }
+
+  .landing-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .home-icon {
+    max-width: 320px;
+  }
+
+  .landing-buttons {
+    max-width: 300px;
+    gap: 15px;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-tertiary {
+    padding: 14px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ────────────────────────────────────────────── */
+/*                     DESKTOP                    */
+/* ────────────────────────────────────────────── */
+
+@media (min-width: 1024px) {
+  .landing-container {
+    padding: 50px 40px;
+  }
+
+  .landing-title {
+    font-size: 2.4rem;
+  }
+
+  .landing-subtitle {
+    font-size: 1.4rem;
+  }
+
+  .home-icon {
+    max-width: 400px;
+  }
+
+  .home-text {
+    font-size: 1.1rem;
+  }
 }

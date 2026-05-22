@@ -1,30 +1,36 @@
+/* ────────────────────────────────────────────── */
+/*           USER DETAILS — MOBILE FIRST          */
+/* ────────────────────────────────────────────── */
+
 /* --- CONTAINER --- */
 .details-container {
-  padding: 20px;
+  padding: 16px; /* mobile */
 }
 
 .details-title {
-  font-size: 2rem;
+  font-size: 1.6rem; /* mobile */
   font-weight: 700;
   color: #041c36;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  text-align: center; /* mobile */
 }
 
 /* --- CARTE --- */
 .details-card {
   background: white;
-  padding: 30px;
+  padding: 20px; /* mobile */
   border-radius: 12px;
   border-top: 4px solid #ffe603;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 /* --- LIGNES --- */
 .details-row {
   display: flex;
-  justify-content: space-between;
-  padding: 14px 0;
+  flex-direction: column; /* mobile */
+  gap: 6px;
+  padding: 12px 0;
   border-bottom: 1px solid #eee;
 }
 
@@ -35,11 +41,13 @@
 .details-label {
   font-weight: 600;
   color: #041c36;
+  font-size: 0.95rem;
 }
 
 .details-value {
   font-weight: 500;
   color: #333;
+  font-size: 1rem;
 }
 
 /* --- BADGES --- */
@@ -49,6 +57,7 @@
   font-weight: 600;
   font-size: 0.9rem;
   text-transform: capitalize;
+  width: fit-content;
 }
 
 .role-badge.admin {
@@ -64,17 +73,21 @@
 /* --- ACTIONS --- */
 .details-actions {
   display: flex;
-  gap: 20px;
+  flex-direction: column; /* mobile */
+  gap: 12px;
+  margin-top: 20px;
 }
 
 .details-btn {
-  padding: 10px 20px;
+  padding: 10px 16px; /* mobile */
   background: #041c36;
   color: white;
   border: 2px solid #041c36;
   border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
+  font-size: 0.95rem;
+  text-align: center;
   transition: 0.3s ease;
 }
 
@@ -95,4 +108,62 @@
   background: #ffe603;
   color: #041c36;
   border-color: #ffe603;
+}
+
+/* ────────────────────────────────────────────── */
+/*                     TABLETTE                   */
+/* ────────────────────────────────────────────── */
+
+@media (min-width: 768px) {
+  .details-container {
+    padding: 24px;
+  }
+
+  .details-title {
+    font-size: 1.8rem;
+    text-align: left;
+  }
+
+  .details-card {
+    padding: 28px;
+  }
+
+  .details-row {
+    flex-direction: row; /* tablette = label + value côte à côte */
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .details-actions {
+    flex-direction: row; /* tablette = boutons en ligne */
+    gap: 16px;
+  }
+
+  .details-btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* ────────────────────────────────────────────── */
+/*                     DESKTOP                    */
+/* ────────────────────────────────────────────── */
+
+@media (min-width: 1024px) {
+  .details-container {
+    padding: 32px;
+  }
+
+  .details-title {
+    font-size: 2rem;
+  }
+
+  .details-card {
+    padding: 32px;
+  }
+
+  .details-btn {
+    padding: 12px 24px;
+    font-size: 1.05rem;
+  }
 }
