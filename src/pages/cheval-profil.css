@@ -57,6 +57,44 @@
 }
 
 /* ────────────────────────────────────────────── */
+/*         LIVRET NUMÉRIQUE — CARTE COVER         */
+/* ────────────────────────────────────────────── */
+
+.livret-preview {
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.livret-preview:hover {
+  transform: scale(1.02);
+}
+
+.livret-cover {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.livret-cover-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.livret-cover-sub {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: 6px;
+}
+
+/* Section où la page 1 du livret est affichée */
+.livret-section {
+  margin-top: 20px;
+}
+
+/* ────────────────────────────────────────────── */
 /*                     TABLETTE                   */
 /* ────────────────────────────────────────────── */
 

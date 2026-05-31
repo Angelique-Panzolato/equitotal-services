@@ -1,0 +1,120 @@
+/* ────────────────────────────────────────────── */
+/*          CONDITIONS — MOBILE FIRST             */
+/* ────────────────────────────────────────────── */
+
+.conditions-container {
+  padding: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+  color: #041c36;
+}
+
+.conditions-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-align: center;
+  color: #ffe603;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.conditions-intro {
+  text-align: center;
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 25px;
+}
+
+/* Sections */
+.conditions-section {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 2px solid #ffe603;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
+
+.conditions-section-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #041c36;
+  margin-bottom: 12px;
+}
+
+.conditions-section p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 12px;
+}
+
+.conditions-section ul,
+.conditions-section ol {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.conditions-section li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+/* Notes */
+.conditions-note {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* ────────────────────────────────────────────── */
+/*                     TABLETTE                   */
+/* ────────────────────────────────────────────── */
+
+@media (min-width: 768px) {
+  .conditions-container {
+    padding: 24px;
+  }
+
+  .conditions-title {
+    font-size: 2rem;
+  }
+
+  .conditions-section {
+    padding: 28px;
+  }
+
+  .conditions-section-title {
+    font-size: 1.5rem;
+  }
+
+  .conditions-section p,
+  .conditions-section li {
+    font-size: 1rem;
+  }
+}
+
+/* ────────────────────────────────────────────── */
+/*                     DESKTOP                    */
+/* ────────────────────────────────────────────── */
+
+@media (min-width: 1024px) {
+  .conditions-container {
+    padding: 32px;
+  }
+
+  .conditions-title {
+    font-size: 2.2rem;
+  }
+
+  .conditions-section {
+    padding: 32px;
+  }
+
+  .conditions-section-title {
+    font-size: 1.6rem;
+  }
+}

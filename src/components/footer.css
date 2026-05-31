@@ -1,0 +1,23 @@
+.main-footer {
+  background-color: #041c36;
+  padding: 20px 0;
+  margin-top: auto; /* Aide à pousser le footer en bas */
+  text-align: center;
+  border-top: 4px solid #ffcc00; 
+  color: #fff;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-link {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration:underline;
+  font-size: 0.9rem;
+}
+
+.footer-link:hover {
+  color: #ffcc00;
+}

@@ -6,10 +6,10 @@ export default function Dashboard() {
 
   return (
     <div className="userdash-container">
-
-      <h1 className="userdash-title">Mon espace personnel</h1>
-
-
+      <div className="dashboard-welcome">
+        <h1>Bonjour et bienvenue sur votre espace personnel</h1>
+      </div>
+   
       <button
         className="livret-btn"
         onClick={() => navigate("/livret-numerique")}

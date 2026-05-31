@@ -1,13 +1,18 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./aide.css"; // si tu veux ajouter un CSS dédié
 
 export default function Aide() {
+  const navigate = useNavigate();
+
   return (
     <div className="aide-container">
-      
+      <button className="back-button" onClick={() => navigate(-1)}>
+        ← Retour
+      </button>
       <h1 className="aide-title">Aide & Support</h1>
       <p className="aide-intro">
-        Bienvenue dans l’espace d’aide d’EquiTotal.  
+        Bienvenue dans l’espace d’aide du Livret Numerique.  
         Retrouvez ici toutes les informations nécessaires pour utiliser la plateforme sereinement.
       </p>
 
@@ -96,9 +101,6 @@ export default function Aide() {
         <p className="aide-text">
           Vos données sont protégées et stockées de manière sécurisée.  
           Pour plus d’informations, consultez nos{" "}
-          <a href="/conditions" className="aide-link">
-            Conditions & Confidentialité
-          </a>.
         </p>
       </section>
 

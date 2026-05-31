@@ -1,5 +1,5 @@
-import "./livret-info.css";
-import logo from "../assets/logo.png";
+import "./LivretInfo.css";
+import logo from "../../assets/logo.png";
 import { useNavigate } from "react-router-dom"; 
 
 export default function LivretInfo() {

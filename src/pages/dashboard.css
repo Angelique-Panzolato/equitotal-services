@@ -16,6 +16,14 @@
   text-align: center; /* mobile */
 }
 
+h1 {
+  font-size: 1.6rem; /* mobile */
+  font-weight: 700;
+  color: #ffe603;
+  margin-bottom: 20px;
+  text-align: center; /* mobile */
+}
+
 /* Bouton livret */
 .livret-btn {
   padding: 10px 16px; /* mobile */

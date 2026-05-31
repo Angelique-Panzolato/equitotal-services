@@ -6,7 +6,7 @@ export const horse = {
   age: 8,
   dateNaissance: "2018-04-12",
   proprietaire: "Nom du propriétaire",
-  photo: "/images/cheval.jpg",
+  photo: "src/assets/cheval.jpg",
 
   // Informations biologiques
   taille: 165, // en cm
@@ -52,7 +52,24 @@ export const horse = {
 
   // Galerie
   galerie: [
-    "/images/photo1.jpg",
-    "/images/photo2.jpg"
+    "src/assets/photo1.jpg",
+    "src/assets/photo2.jpg"
+  ],
+
+// Historique des propriétaires
+  historiqueProprietaires: [
+    {
+      nom: "Dupont Jean",
+      adresse: "12 rue des Écuries",
+      cpVille: "64000 Pau",
+      pays: "France",
+      dateDebut: "01/03/2020",
+      dateFin: "—",
+      mode: "Achat"
+    }
   ]
+
+
 };
+
+  

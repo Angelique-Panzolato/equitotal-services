@@ -1,6 +1,7 @@
 /* ────────────────────────────────────────────── */
 /*                VARIABLES GLOBALES              */
 /* ────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap');
 
 :root {
   --font-body: "Inter", sans-serif;
@@ -52,8 +53,14 @@ h1, h2, h3, h4 {
   width: 100%;
   margin: 0 auto;
   padding: 16px;
+  display:flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
+main, .landing-container, .info-container, .aide-container {
+  flex: 1;
+}
 /* Boutons globaux */
 button {
   font-family: var(--font-body);

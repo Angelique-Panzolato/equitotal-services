@@ -1,37 +1,22 @@
-import "./chevaux.css";
+// src/features/livretNumerique/HorseList.jsx
+import React from 'react';
 import { useNavigate } from "react-router-dom";
+import { MOCK_HORSES } from "../../data/mockData"; // On importe nos données ici !
+import "./HorseList.css";
 
-export default function Chevaux() {
+export default function HorseList() {
   const navigate = useNavigate();
-
-  // ⚠️ Plus tard : on remplacera ça par des données venant du backend
-  const chevaux = [
-    {
-      id: 1,
-      nom: "Hidalgo",
-      race: "Pur-sang",
-      age: 7,
-      image: "/img/cheval1.jpg"
-    },
-    {
-      id: 2,
-      nom: "Eclipse",
-      race: "Selle Français",
-      age: 10,
-      image: "/img/cheval2.jpg"
-    }
-  ];
 
   return (
     <div className="chevaux-container">
       <h1 className="chevaux-title">Mes chevaux</h1>
 
       <div className="chevaux-grid">
-        {chevaux.map((cheval) => (
+        {MOCK_HORSES.map((cheval) => (
           <div
             key={cheval.id}
             className="cheval-card"
-            onClick={() => navigate(`/chevaux/${cheval.id}`)}
+            onClick={() => navigate(`/livret/${cheval.id}`)} // Route ajustée
           >
             <div className="cheval-image-wrapper">
               <img src={cheval.image} alt={cheval.nom} className="cheval-image" />
@@ -40,7 +25,7 @@ export default function Chevaux() {
             <div className="cheval-info">
               <h3 className="cheval-nom">{cheval.nom}</h3>
               <p className="cheval-detail">{cheval.race}</p>
-              <p className="cheval-detail">{cheval.age} ans</p>
+              <p className="cheval-detail">{cheval.sire}</p> 
             </div>
           </div>
         ))}

@@ -1,32 +1,49 @@
 import { Link, useLocation } from "react-router-dom";
 import "./header.css";
-import BackButton from "./backbutton";
 
-export default function Header() {
+export default function Header({ isLoggedIn }) {
   const location = useLocation();
 
-  // Pages où le header doit être caché
-  const hiddenPages = ["/", "/livret-info"];
+  // Pages où le header doit être caché quand NON connecté
+  const hiddenWhenLoggedOut = [
+    "/",
+    "/login",
+    "/register",
+    "/conditions",
+    "/aide",
+    "/livret-info"
+  ];
 
-  if (hiddenPages.includes(location.pathname)) {
+  // Page où le header doit être caché même connecté (ex : livret feuilletable)
+  const hiddenAlways = [
+    "/chevaux/:id/livret" // on affinera avec un includes()
+  ];
+
+  // Masquer si :
+  // - utilisateur non connecté ET page dans hiddenWhenLoggedOut
+  // - OU page dans hiddenAlways
+  if (
+    (!isLoggedIn && hiddenWhenLoggedOut.includes(location.pathname)) ||
+    location.pathname.includes("/livret")
+  ) {
     return null;
   }
-
-  // Pages où le bouton retour NE doit PAS apparaître
-  const noBackPages = ["/dashboard"];
-
-  const showBack = !noBackPages.includes(location.pathname);
 
   return (
     <header className="main-header">
       <div className="header-left">
-        {showBack && <BackButton />}
-        <Link to="/" className="header-logo">EquiTotal Services</Link>
+        <Link to="/dashboard" className="header-logo">
+          EquiTotal Services
+        </Link>
       </div>
 
       <nav className="header-nav">
-        <Link to="/dashboard" className="header-link">Dashboard</Link>
+        <Link to="/contact" className="header-link">Contact</Link>
+        <Link to="/account" className="header-link">Mon compte</Link>
+        <button className="lang-btn">🌍</button>
+
         <Link to="/logout" className="header-link logout">Déconnexion</Link>
+
       </nav>
     </header>
   );
