@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./login.css";
+import "./Login.css";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -12,14 +12,16 @@ export default function Login() {
 
   // Exemple simple : un admin
   if (email === "angelique.panzolato@gmail.com" && password === "admin") {
-    localStorage.setItem("role", "admin");
+    localStorage.setItem("isAuthenticated", "true");
+    localStorage.setItem("userRole", "admin");
     navigate("/admin");
     return;
   }
 
   // Exemple simple : un utilisateur normal
   if (email === "test@test.com" && password === "12345") {
-    localStorage.setItem("role", "user");
+    localStorage.setItem("isAuthenticated", "true");
+    localStorage.setItem("userRole", "user");
     navigate("/dashboard");
     return;
   }

@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
-import "./header.css";
+import "./Header.css";
 
-export default function Header({ isLoggedIn }) {
+export default function Header({ isLoggedIn, onLogout }) { // 💡 Ajout de onLogout
   const location = useLocation();
 
   // Pages où le header doit être caché quand NON connecté
@@ -14,17 +14,13 @@ export default function Header({ isLoggedIn }) {
     "/livret-info"
   ];
 
-  // Page où le header doit être caché même connecté (ex : livret feuilletable)
-  const hiddenAlways = [
-    "/chevaux/:id/livret" // on affinera avec un includes()
-  ];
-
   // Masquer si :
   // - utilisateur non connecté ET page dans hiddenWhenLoggedOut
-  // - OU page dans hiddenAlways
+  // - OU page est liée au livret
   if (
     (!isLoggedIn && hiddenWhenLoggedOut.includes(location.pathname)) ||
-    location.pathname.includes("/livret")
+    location.pathname.includes("/livret") ||
+    location.pathname.startsWith("/admin") // 💡 Masquer le header standard dans l'admin (l'admin aura son propre menu)
   ) {
     return null;
   }
@@ -32,7 +28,8 @@ export default function Header({ isLoggedIn }) {
   return (
     <header className="main-header">
       <div className="header-left">
-        <Link to="/dashboard" className="header-logo">
+        {/* 💡 Si admin, renvoie vers l'admin, sinon vers le dashboard */}
+        <Link to={localStorage.getItem("userRole") === "admin" ? "/admin" : "/dashboard"} className="header-logo">
           EquiTotal Services
         </Link>
       </div>
@@ -42,8 +39,10 @@ export default function Header({ isLoggedIn }) {
         <Link to="/account" className="header-link">Mon compte</Link>
         <button className="lang-btn">🌍</button>
 
-        <Link to="/logout" className="header-link logout">Déconnexion</Link>
-
+        {/* 💡 Remplacer le Link par un bouton ou déclencher onLogout pour nettoyer le localStorage */}
+        <button onClick={onLogout} className="header-link logout-btn">
+          Déconnexion
+        </button>
       </nav>
     </header>
   );

@@ -1,14 +1,19 @@
 import { Link, useNavigate } from "react-router-dom";
-import "./register.css";
+import "./Register.css";
 
-export default function Register() {
+export default function Register({onRegisterSuccess}) {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Ici tu ajouteras plus tard la logique réelle d'inscription (API)
-    // Pour l'instant on simule une inscription réussie :
+    localStorage.setItem("isAuthenticated", "true");
+    localStorage.setItem("userRole", "client");
+
+    if (onRegisterSuccess){
+      onRegisterSuccess();
+    }
+
     navigate("/dashboard");
   };
 

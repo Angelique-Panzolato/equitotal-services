@@ -1,9 +1,8 @@
-import AdminLayout from "./adminLayout";
+import {Link} from "react-router-dom";
 import "./admin.css";
 
 export default function Admin() {
   return (
-    <AdminLayout>
       <div className="admin-dashboard">
 
         <h1 className="dashboard-title">Dashboard</h1>
@@ -26,12 +25,17 @@ export default function Admin() {
         </div>
 
         <div className="dashboard-actions">
-          <button className="dashboard-button">Voir les utilisateurs</button>
-          <button className="dashboard-button">Voir les livrets</button>
-          <button className="dashboard-button">Paramètres</button>
+          <Link to="/admin/users" className="dashboard-button">
+            Voir les utilisateurs
+          </Link>
+          <Link to="/admin/livrets" className="dashboard-button">
+            Voir les livrets
+          </Link>
+          <Link to="/admin/parametres" className="dashboard-button">
+            Paramètres
+          </Link>
         </div>
 
       </div>
-    </AdminLayout>
   );
 }

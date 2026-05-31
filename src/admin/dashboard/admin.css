@@ -59,6 +59,9 @@
 }
 
 .dashboard-button {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
   padding: 12px 20px;
   background: #041c36;
   color: white;
@@ -68,7 +71,8 @@
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s ease;
-  width: 100%;              /* mobile = full width */
+  width: 100%; /* mobile = full width */
+  box-sizing: border-box;
 }
 
 .dashboard-button:hover {

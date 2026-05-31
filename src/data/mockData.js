@@ -27,3 +27,17 @@ export const MOCK_HORSES = [
     vaccins: []
   }
 ];
+
+export const mockData = {
+  users: [
+    { id: 1, 
+      email: "angelique.panzolato@gmail.com", 
+      password: "admin",
+      role: "admin" },
+    { id: 2, 
+      email: "test@test.com", 
+      password: "12345", 
+      role: "user" }
+  ],
+  horses: MOCK_HORSES
+};

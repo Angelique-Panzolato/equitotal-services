@@ -34,7 +34,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px; /* mobile */
-  background-color: #041c36;
+  min-height: 8vh;
 }
 
 /* ────────────────────────────────────────────── */

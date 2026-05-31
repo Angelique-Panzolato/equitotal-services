@@ -1,40 +1,69 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 
-// Import de tes pages
+// Pages Publiques
 import LandingPage from './features/authLanding/LandingPage';
 import LivretInfo from './features/authLanding/LivretInfo';
-import HorseList from './features/livretNumerique/HorseList';
 import Aide from './features/authLanding/aide';
 import Conditions from './features/authLanding/conditions';
-import Footer from './components/footer';
+import Login from './features/authLanding/Login';
+import Register from './features/authLanding/register';
+
+// Pages Admin (Vérifie bien que les noms de fichiers sur ton PC sont identiques)
+import ProtectedAdmin from './admin/protectedadmin';
+import AdminLayout from './admin/components/adminLayout'; // Vérifie si 'a' ou 'A'
+import Admin from './admin/dashboard/admin';
+import Users from './admin/users/users';
+import Header from './components/Header';
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("isAuthenticated") === "true");
+  const location = useLocation();
+  const isAdminPage = location.pathname.startsWith('/admin');
+
+  const handleLogout = () => {
+    localStorage.clear();
+    setIsLoggedIn(false);
+    window.location.href = "/";
+  };
+
   return (
-    <Router>
-      <div className="app-container">
+    <div className={`app-container ${isAdminPage ? 'admin-page' : ''}`}>
+      {/* On n'affiche le Header client que hors de l'admin */}
+      {!isAdminPage && <Header isLoggedIn={isLoggedIn} onLogout={handleLogout} />}
+
+      <main className="main-content">
         <Routes>
-          {/* Route pour la page d'accueil */}
+          {/* Routes Publiques */}
           <Route path="/" element={<LandingPage />} />
-
-          {/* Route pour la page d'information sur le livret */}
           <Route path="/livret" element={<LivretInfo />} />
-
-          {/* Route pour la page d'aide */}
           <Route path="/aide" element={<Aide />} />
-
-          {/* Route pour les conditions d'utilisation */}
           <Route path="/conditions" element={<Conditions />} />
+          <Route path="/login" element={<Login onLoginSuccess={() => setIsLoggedIn(true)} />} />
+          <Route path="/register" element={<Register onRegisterSuccess={() => setIsLoggedIn(true)} />} />
 
-          {/* Route pour la liste des chevaux */}
-          <Route path="/chevaux" element={<HorseList />} />
+          {/* Routes Admin */}
+          <Route path="/admin" element={
+            <ProtectedAdmin>
+              <AdminLayout onLogout={handleLogout}>
+                <Admin />
+              </AdminLayout>
+            </ProtectedAdmin>
+          } />
 
-          {/* Tu pourras ajouter ici tes futures routes comme /login ou /register */}
+          <Route path="/admin/users" element={
+            <ProtectedAdmin>
+              <AdminLayout onLogout={handleLogout}>
+                <Users />
+              </AdminLayout>
+            </ProtectedAdmin>
+          } />
+
+          {/* 404 */}
+          <Route path="*" element={<h1>Erreur 404 : Page introuvable</h1>} />
         </Routes>
-
-      <Footer />
-      </div>
-    </Router>
+      </main>
+    </div>
   );
 }
 

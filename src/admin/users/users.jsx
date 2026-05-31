@@ -1,19 +1,21 @@
 import { useState } from "react";
-import { users as initialUsers, deleteUser } from "./data/users";
+import {mockData} from "../../data/mockData";
 import "./users.css";
 import { Link } from "react-router-dom";
 
 export default function Users() {
-  const [userList, setUserList] = useState(initialUsers);
+  const [userList, setUserList] = useState(mockData.users);
 
   function handleDelete(id) {
-    deleteUser(id);
-    setUserList(userList.filter((u) => u.id !== id));
+    if (window.confirm("Voulez-vous vraiment supprimer cet utilisateur ?")) {
+      const updatedList = userList.filter ((u) => u.id !== id);
+      setUserList(updatedList);
+    }
   }
 
   return (
     <div className="users-container">
-      <h1 className="users-title">Liste des utilisateurs</h1>
+      <h1 className="users-title">Gestion des utilisateurs</h1>
 
       <table className="users-table">
         <thead>
@@ -21,7 +23,7 @@ export default function Users() {
             <th>ID</th>
             <th>Email</th>
             <th>Rôle</th>
-            <th>Actions</th>
+            <th>Mot de Passe</th>{/* On n'affiche pas le mot de passe pour des raisons de sécurité, mais tu peux ajouter une colonne si tu veux */}
           </tr>
         </thead>
 
@@ -31,6 +33,7 @@ export default function Users() {
               <td>{user.id}</td>
               <td>{user.email}</td>
               <td>
+                <code>********</code>
                 <span
                   className={
                     user.role === "admin"
