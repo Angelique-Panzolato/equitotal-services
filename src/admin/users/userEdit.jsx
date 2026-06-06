@@ -1,19 +1,24 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { users, updateUser } from "./data/users";
-import "./useredit.css";
+import { mockData } from "../../data/mockData";
+import "./userEdit.css";
 import { useState } from "react";
 
 export default function UserEdit() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const user = users.find((u) => u.id === parseInt(id));
+  const user = mockData.users.find((u) => u.id === parseInt(id));
 
   const [email, setEmail] = useState(user?.email || "");
   const [role, setRole] = useState(user?.role || "user");
+  const [password, setPassword] = useState(user?.password || ""); 
 
   if (!user) {
-    return <p>Utilisateur introuvable.</p>;
+    return 
+    <div className="edit-container">
+        <p>⚠️ Utilisateur avec l'ID {id} introuvable.</p>
+        <button onClick={() => navigate("/admin/users")}>Retour</button>
+      </div>
   }
 
   function handleSubmit(e) {

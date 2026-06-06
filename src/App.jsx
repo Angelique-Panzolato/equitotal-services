@@ -7,7 +7,14 @@ import LivretInfo from './features/authLanding/LivretInfo';
 import Aide from './features/authLanding/aide';
 import Conditions from './features/authLanding/conditions';
 import Login from './features/authLanding/Login';
-import Register from './features/authLanding/register';
+import Register from './features/authLanding/Register';
+
+
+// MODULES DASHBOARDS
+import Proprietaires from './modules/dashboards/Proprietaires';
+import Prestataires from './modules/dashboards/Prestataires';
+import Institutions from './modules/dashboards/Institutions';
+
 
 // Pages Admin (Vérifie bien que les noms de fichiers sur ton PC sont identiques)
 import ProtectedAdmin from './admin/protectedadmin';
@@ -39,8 +46,14 @@ function App() {
           <Route path="/livret" element={<LivretInfo />} />
           <Route path="/aide" element={<Aide />} />
           <Route path="/conditions" element={<Conditions />} />
-          <Route path="/login" element={<Login onLoginSuccess={() => setIsLoggedIn(true)} />} />
-          <Route path="/register" element={<Register onRegisterSuccess={() => setIsLoggedIn(true)} />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+
+        {/* DASHBOARDS */}
+        {/* Dashboard Propriétaires */}
+        <Route path="/proprietaires" element={<Proprietaires />} />
+        <Route path="/prestataires" element={<Prestataires />} />
+        <Route path="/institutions" element={<Institutions />} />
 
           {/* Routes Admin */}
           <Route path="/admin" element={

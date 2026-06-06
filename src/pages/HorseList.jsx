@@ -1,7 +1,7 @@
 // src/features/livretNumerique/HorseList.jsx
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-import { MOCK_HORSES } from "../../data/mockData"; // On importe nos données ici !
+import { MOCK_HORSES } from "../data/mockData"; // On importe nos données ici !
 import "./HorseList.css";
 
 export default function HorseList() {

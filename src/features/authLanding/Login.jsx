@@ -5,30 +5,48 @@ import "./Login.css";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   function handleLogin(e) {
-  e.preventDefault();
+    e.preventDefault();
 
-  // Exemple simple : un admin
-  if (email === "angelique.panzolato@gmail.com" && password === "admin") {
-    localStorage.setItem("isAuthenticated", "true");
-    localStorage.setItem("userRole", "admin");
-    navigate("/admin");
-    return;
+    // On récupère l'utilisateur stocké lors de l'inscription
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+
+    if (!storedUser) {
+      setError("Aucun compte trouvé. Veuillez vous inscrire.");
+      return;
+    }
+
+    // Vérification email + mot de passe
+    if (storedUser.email !== email || storedUser.password !== password) {
+      setError("Identifiants incorrects.");
+      return;
+    }
+
+    // Connexion OK
+    localStorage.setItem("isLoggedIn", "true");
+
+    // Redirection selon le rôle
+    if (storedUser.role === "proprietaire") {
+      navigate("/proprietaires");
+      return;
+    }
+
+    if (storedUser.role === "prestataire") {
+      navigate("/prestataires");
+      return;
+    }
+
+    if (storedUser.role === "institution") {
+      navigate("/institution");
+      return;
+    }
+
+    // Sécurité : si aucun rôle ne correspond
+    navigate("/");
   }
-
-  // Exemple simple : un utilisateur normal
-  if (email === "test@test.com" && password === "12345") {
-    localStorage.setItem("isAuthenticated", "true");
-    localStorage.setItem("userRole", "user");
-    navigate("/dashboard");
-    return;
-  }
-
-  alert("Identifiants incorrects");
-}
-
 
   return (
     <div className="login-container">
@@ -41,6 +59,7 @@ export default function Login() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           className="login-input"
+          required
         />
 
         <input
@@ -49,7 +68,10 @@ export default function Login() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           className="login-input"
+          required
         />
+
+        {error && <p className="error-message">{error}</p>}
 
         <button type="submit" className="login-button">
           Se connecter
@@ -58,8 +80,8 @@ export default function Login() {
 
       <div className="login-info">
         <img src="src/assets/logo.png" alt="Logo EquiTotal" className="login-logo" />
-        <p>Bienvenue sur le Livret Numérique d'EquiTotal Services</p>
-      </div>  
+        <p>Bienvenue sur EquiPass Sante</p>
+      </div>
     </div>
   );
 }

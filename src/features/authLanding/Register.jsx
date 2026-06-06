@@ -1,20 +1,29 @@
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Register.css";
 
-export default function Register({onRegisterSuccess}) {
+export default function Register() {
   const navigate = useNavigate();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [role, setRole] = useState("proprietaire");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    localStorage.setItem("isAuthenticated", "true");
-    localStorage.setItem("userRole", "client");
+    // On crée l'utilisateur
+    const newUser = {
+      email,
+      password,
+      role,
+    };
 
-    if (onRegisterSuccess){
-      onRegisterSuccess();
-    }
+    // On le stocke dans le localStorage
+    localStorage.setItem("user", JSON.stringify(newUser));
 
-    navigate("/dashboard");
+    // On redirige vers la page de connexion
+    navigate("/login");
   };
 
   return (
@@ -27,10 +36,29 @@ export default function Register({onRegisterSuccess}) {
 
       <form className="register-form" onSubmit={handleSubmit}>
         <label>Email</label>
-        <input type="email" placeholder="Votre email" required />
+        <input
+          type="email"
+          placeholder="Votre email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
 
         <label>Mot de passe</label>
-        <input type="password" placeholder="Votre mot de passe" required />
+        <input
+          type="password"
+          placeholder="Votre mot de passe"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+
+        <label>Type d'utilisateur</label>
+        <select value={role} onChange={(e) => setRole(e.target.value)}>
+          <option value="proprietaire">Propriétaire</option>
+          <option value="prestataire">Prestataire</option>
+          <option value="institution">Institution</option>
+        </select>
 
         <button type="submit" className="register-button">
           Créer mon compte
