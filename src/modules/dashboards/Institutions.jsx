@@ -1,7 +1,7 @@
 import React from "react";
-import "./institution.css";
+import "./institutions.css";
 
-export default function Institution() {
+export default function Institutions() {
   const user = JSON.parse(localStorage.getItem("user"));
 
   return (

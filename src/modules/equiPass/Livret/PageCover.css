@@ -1,0 +1,74 @@
+/* --- CONTAINER GLOBAL --- */
+.cover-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px;
+  background: white;
+  font-family: "Arial", sans-serif;
+  color: #000;
+  box-sizing: border-box;
+}
+
+/* --- HEADER AVEC LES 3 LOGOS --- */
+.cover-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.cover-logo-small {
+  width: 120px;
+  height: auto;
+}
+
+.cover-logo-main {
+  width: 180px;
+  height: auto;
+}
+
+/* --- TITRE PRINCIPAL --- */
+.cover-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  line-height: 1.4;
+}
+
+/* --- BLOC D’INFOS DU CHEVAL --- */
+.cover-block {
+  border: 2px solid #000;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.cover-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.cover-row:last-child {
+  border-bottom: none;
+}
+
+.label {
+  font-weight: bold;
+  width: 40%;
+}
+
+.value {
+  width: 60%;
+  text-align: right;
+}
+
+/* --- FOOTER --- */
+.cover-footer {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 40px;
+  line-height: 1.4;
+}
