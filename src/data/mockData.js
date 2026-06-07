@@ -41,3 +41,46 @@ export const mockData = {
   ],
   horses: MOCK_HORSES
 };
+
+export const cheval = {
+  nom: "JE S’APPELLE PROOF AA",
+  sire: "25376905G",
+  ueln: "25000125376905G",
+  transpondeur: "250258500421094",
+  race: "ANGLO-ARABE",
+  sangArabe: "19.83%",
+  sexe: "MALE",
+  robe: "BAI FONCÉ",
+
+  // PAGE 02 — EXACTEMENT CE QUE TU AS ÉCRIT
+  robeDetaillee: "BAI FONCE",
+
+  tete: {
+    entete: "UN EPI EN-TETE",
+    liste: "PAS DE LISTE",
+    ladre: "PAS DE LADRE"
+  },
+
+  membres: {
+    antG: "NEANT",
+    antD: "NEANT",
+    postG: "NEANT",
+    postD: "NEANT"
+  },
+
+  corps: {
+    ssCriniG: "UN EPI SOUS CRINIERE",
+    ssCriniD: "UN EPI SOUS CRINIERE",
+    ssEncolure: "DEUX EPIS SOUS ENCOLURE"
+  },
+
+  specificites: "AUCUNE SPECIFICITE",
+
+  adn: "TYPE ADN, CONTROLE DE FILIATION COMPATIBLE",
+
+  // PAGE 01
+  naissance: "30/04/2025",
+  lieuNaissance: "POEY DE LESCAR (64230) FRANCE",
+  naisseur: "M. PIERRE-YVES MASSOUBRE",
+  dateEdition: "11/12/2025"
+};

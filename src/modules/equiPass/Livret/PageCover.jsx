@@ -12,8 +12,11 @@ export default function PageCover({ data }) {
       {/* HEADER LOGOS */}
       <div className="cover-header">
         <img src={logoIfce} alt="IFCE" className="cover-logo-small" />
-        <img src={logoAngloArabe} alt="Anglo-Arabe" className="cover-logo-main" />
         <img src={logoSire} alt="SIRE" className="cover-logo-small" />
+        
+        {data.race === "Anglo-Arabe" && (
+          <img src={logoAngloArabe} alt="Association Nationale de l’Anglo-Arabe" className="cover-logo-small" />
+        )}
       </div>
 
       {/* TITLE */}
