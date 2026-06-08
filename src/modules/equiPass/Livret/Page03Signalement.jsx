@@ -1,5 +1,6 @@
 import React from "react";
 import "./Page03Signalement.css";
+import Signalement from "./assets/signalement.png";
 
 export default function Page03Signalement({ data }) {
   return (
@@ -16,7 +17,7 @@ export default function Page03Signalement({ data }) {
 
       <div className="page03-image-wrapper">
         <img 
-          src="./assets/toutes-vues.jpg" 
+          src={Signalement}
           alt="Signalement graphique du cheval"
           className="page03-image"
         />

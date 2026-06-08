@@ -1,0 +1,73 @@
+.page04-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Silhouettes */
+.page04-silhouettes img {
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Identification */
+.page04-id p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+/* Sections */
+.page04-section h3 {
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+
+.page04-box {
+  width: 100%;
+  height: 120px;
+  border: 1px solid #000;
+  margin-top: 6px;
+}
+
+.page04-lines {
+  height: 80px;
+  border: 1px solid #000;
+  margin-top: 6px;
+}
+
+.page04-line {
+  height: 30px;
+  border-bottom: 1px solid #000;
+  margin: 6px 0;
+}
+
+.page04-double {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Cases Oui / Non */
+.page04-choices {
+  display: flex;
+  gap: 20px;
+  margin: 10px 0;
+}
+
+/* TABLETTE */
+@media (min-width: 768px) {
+  .page04-double {
+    flex-direction: row;
+    gap: 40px;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  .page04-container {
+    max-width: 900px;
+  }
+}

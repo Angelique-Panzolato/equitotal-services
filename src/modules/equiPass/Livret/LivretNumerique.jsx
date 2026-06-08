@@ -2,9 +2,19 @@ import React, { useState } from "react";
 
 // Import des pages du livret
 import PageCover from "./PageCover";
+import "./Page01Identification";
+
 import Page02Identification from "./Page02Identification";
 import Page03Signalement from "./Page03Signalement";
 import { cheval } from "../../../data/mockData";
+import Page04Castration from "./Page04Castration";
+import Page05Proprietaire from "./Page05Proprietaire";
+import Page06Historique from "./Page06Historique";
+import Page07SubstancesReglementees from "./Page07SubstancesReglementees";
+import Page08Validation from "./Page08Validation";
+import Page09ProprieteFEI from "./Paga09ProprieteFEI";
+import Page10CertificatZootechnique from "./Page10CertificationZootechnique";
+
 
 export default function LivretNumerique() {
 
@@ -28,8 +38,16 @@ export default function LivretNumerique() {
       >
         <button onClick={() => setSection("cover")}>Page de garde</button>
         <button onClick={() => setSection("identification")}>Identification</button>
+        <button onClick={() => setSection("identification2")}>Identification</button>
         <button onClick={() => setSection("signalement")}>Signalement</button>
-        {/* Tu rajouteras les autres sections ici */}
+        <button onClick={() => setSection("castration")}>Castration</button>
+        <button onClick={() => setSection("proprietaire")}>Propriétaires</button>
+        <button onClick={() => setSection("historique")}>Historique</button>
+        <button onClick={() => setSection("substances-reglementees")}>Substances réglementées</button>
+        <button onClick={() => setSection("validation")}>Validation</button>
+        <button onClick={() => setSection("propriete-fei")}>Propriété FEI</button>
+        <button onClick={() => setSection("certificat-zootechnique")}>Certificat zootechnique</button>
+
       </div>
 
       {/* CONTENU DU LIVRET */}
@@ -41,8 +59,16 @@ export default function LivretNumerique() {
            }}
       >
         {section === "cover" && <PageCover data={cheval} />}
-        {section === "identification" && <Page02Identification data={cheval} />}
+        {section === "identification" && <Page01Identification data={cheval} />}
+        {section === "identification2" && <Page02Identification data={cheval} />}
         {section === "signalement" && <Page03Signalement data={cheval} />}
+        {section === "castration" && <Page04Castration data={cheval} />}
+        {section === "proprietaire" && <Page05Proprietaire data={cheval} />}
+        {section === "historique" && <Page06Historique data={cheval} />}
+        {section === "substances-reglementees" && <Page07SubstancesReglementees data={cheval} />}
+        {section === "validation" && <Page08Validation data={cheval} />}
+        {section === "propriete-fei" && <Page09ProprieteFEI data={cheval} />}
+        {section === "certificat-zootechnique" && <Page10CertificatZootechnique data={cheval} />}
       </div>
 
     </div>

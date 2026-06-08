@@ -1,0 +1,43 @@
+.page09-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.page09-block p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+/* Tableau */
+.page09-table {
+  width: 100%;
+  border: 1px solid #000;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.table-header,
+.table-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+  font-size: 13px;
+}
+
+.table-header {
+  background: #eaeaea;
+  font-weight: bold;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+@media (min-width: 1024px) {
+  .page09-container {
+    max-width: 1000px;
+  }
+}

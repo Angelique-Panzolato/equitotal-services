@@ -1,0 +1,24 @@
+.page01-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.page01-block p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+.box {
+  width: 100%;
+  height: 120px;
+  border: 1px solid #000;
+  margin-top: 6px;
+}
+
+@media (min-width: 1024px) {
+  .page01-container {
+    max-width: 900px;
+  }
+}

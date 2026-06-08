@@ -1,0 +1,67 @@
+.page06-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Identification */
+.page06-id p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+/* Blocs */
+.page06-block h3 {
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+
+.page06-block p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+/* Lignes */
+.line {
+  width: 100%;
+  height: 28px;
+  border-bottom: 1px solid #000;
+  margin-bottom: 12px;
+}
+
+/* Double colonnes */
+.page06-double {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (min-width: 768px) {
+  .page06-double {
+    flex-direction: row;
+    gap: 40px;
+  }
+}
+
+/* Boîtes */
+.box {
+  width: 100%;
+  height: 120px;
+  border: 1px solid #000;
+  margin-top: 6px;
+}
+
+/* Notes */
+.page06-notes p {
+  font-size: 12px;
+  margin: 2px 0;
+  opacity: 0.8;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .page06-container {
+    max-width: 900px;
+  }
+}

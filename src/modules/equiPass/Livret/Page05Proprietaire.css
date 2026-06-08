@@ -1,0 +1,61 @@
+.page05-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Identification */
+.page05-id p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+/* Tableau */
+.page05-table {
+  width: 100%;
+  border: 1px solid #000;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.table-header,
+.table-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+  font-size: 13px;
+}
+
+.table-header {
+  background: #eaeaea;
+  font-weight: bold;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+/* Signature */
+.signature-box {
+  width: 100%;
+  height: 120px;
+  border: 1px solid #000;
+  margin-top: 6px;
+}
+
+/* TABLETTE */
+@media (min-width: 768px) {
+  .table-header,
+  .table-row {
+    font-size: 14px;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  .page05-container {
+    max-width: 1000px;
+  }
+}
