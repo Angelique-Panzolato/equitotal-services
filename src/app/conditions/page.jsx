@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./conditions.css";
+import Link from "next/link";
+
+import "../../styles/Conditions.css"; // Import du fichier CSS pour le style de la page
 
 export default function Conditions() {
   return (

@@ -3,7 +3,7 @@ import "./page04Castration.css";
 
 export default function Page04Castration({ data }) {
   return (
-    <div className="page04-container">
+    <div className="livret-page page04-container">
 
     
 

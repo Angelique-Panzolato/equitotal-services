@@ -15,6 +15,7 @@
 /* LOGO */
 .landing-logo {
   max-width: 80px; /* mobile */
+  max-height: 80px; /* mobile */
   margin: 0 auto;
 }
 
@@ -23,6 +24,10 @@
   text-align: center;
   margin-top: 30px;
   position: relative;
+}
+
+.landing-icon {
+  margin-left: 60px;
 }
 
 .landing-title {
@@ -36,30 +41,18 @@
 }
 
 .landing-subtitle {
+  font-size: 1.4rem; /* mobile */
+}
+
+
+
+.landing-text {
   font-size: 1.1rem; /* mobile */
-  opacity: 0.9;
-}
-
-/* ICON */
-.home-icon {
-  max-width: 240px; /* mobile */
-  margin: 20px auto;
-}
-
-/* SECTION TEXTE */
-.home-section {
-  max-width: 600px;
-  margin: 30px auto 0;
-  text-align: center;
-  padding: 0 10px;
-}
-
-.home-text {
-  font-size: 1rem; /* mobile */
   line-height: 1.6;
-  color: #e6e6e6;
-  margin-bottom: 16px;
-  opacity: 0.9;
+  color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
 }
 
 /* BUTTONS */
@@ -148,13 +141,20 @@
 
   .landing-subtitle {
     font-size: 1.4rem;
+
+  }
+
+ .landing-icon {
+    max-width: 400px;
+    margin-left: 500px;
   }
 
   .home-icon {
     max-width: 400px;
+  
   }
 
-  .home-text {
+  .landing-text {
     font-size: 1.1rem;
   }
 }

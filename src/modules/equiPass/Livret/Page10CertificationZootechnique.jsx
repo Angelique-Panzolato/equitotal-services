@@ -3,7 +3,7 @@ import "./Page10CertificationZootechnique.css";
 
 export default function Page10CertificationZootechnique({ data }) {
   return (
-    <div className="page10-container">
+    <div className="livret-page page10-container">
 
       <h2>Certificat zootechnique</h2>
       <p className="subtitle">

@@ -1,25 +1,36 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import "./Login.css";
+"use client"; 
+
+import { useState, useEffect } from "react"; // 1. Ajout de useEffect
+import { useRouter } from "next/navigation"; 
+import Image from "next/image"; 
+import "../../styles/Login.css"; 
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const navigate = useNavigate();
+  const [storedUser, setStoredUser] = useState(null); // 2. On stocke l'user dans un state
+  const router = useRouter(); 
+
+  // 3. Ce hook s'exécute UNIQUEMENT côté client (navigateur) après le premier rendu
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const user = localStorage.getItem("user");
+      if (user) {
+        setStoredUser(JSON.parse(user));
+      }
+    }
+  }, []);
 
   function handleLogin(e) {
     e.preventDefault();
 
-    // On récupère l'utilisateur stocké lors de l'inscription
-    const storedUser = JSON.parse(localStorage.getItem("user"));
-
+    // 4. La vérification utilise maintenant le state sécurisé
     if (!storedUser) {
       setError("Aucun compte trouvé. Veuillez vous inscrire.");
       return;
     }
 
-    // Vérification email + mot de passe
     if (storedUser.email !== email || storedUser.password !== password) {
       setError("Identifiants incorrects.");
       return;
@@ -30,22 +41,21 @@ export default function Login() {
 
     // Redirection selon le rôle
     if (storedUser.role === "proprietaire") {
-      navigate("/proprietaires");
+      router.push("/dashboards/proprietaires");
       return;
     }
 
     if (storedUser.role === "prestataire") {
-      navigate("/prestataires");
+      router.push("/dashboards/prestataires");
       return;
     }
 
     if (storedUser.role === "institution") {
-      navigate("/institution");
+      router.push("/dashboards/institutions");
       return;
     }
 
-    // Sécurité : si aucun rôle ne correspond
-    navigate("/");
+    router.push("/");
   }
 
   return (
@@ -79,7 +89,7 @@ export default function Login() {
       </form>
 
       <div className="login-info">
-        <img src="src/assets/logo.png" alt="Logo EquiTotal" className="login-logo" />
+        <Image src="/assets/logo.png" alt="Logo EquiTotal" className="login-logo" width={200} height={100} />
         <p>Bienvenue sur EquiPass Sante</p>
       </div>
     </div>

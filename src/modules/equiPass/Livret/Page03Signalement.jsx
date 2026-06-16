@@ -4,7 +4,7 @@ import Signalement from "./assets/signalement.png";
 
 export default function Page03Signalement({ data }) {
   return (
-    <div className="page03-container">
+    <div className="livret-page page03-container">
 
       <h2>Signalement graphique</h2>
 

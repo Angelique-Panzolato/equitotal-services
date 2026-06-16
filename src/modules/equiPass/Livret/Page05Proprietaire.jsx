@@ -3,7 +3,7 @@ import "./Page05Proprietaire.css";
 
 export default function Page05Proprietaire({ data }) {
   return (
-    <div className="page05-container">
+    <div className="livret-page page05-container">
 
       <h2>Partie D : Propriétaires / Détenteurs</h2>
 

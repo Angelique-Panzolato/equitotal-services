@@ -3,7 +3,7 @@ import "./Page08Validation.css";
 
 export default function Page08Validation({ data }) {
   return (
-    <div className="page08-container">
+    <div className="livret-page page08-container">
 
       <h2>Marque de validation ou licence</h2>
 

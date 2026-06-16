@@ -3,7 +3,7 @@ import "./Page01Identification.css";
 
 export default function Page01Identification({ data }) {
   return (
-    <div className="page01-container">
+    <div className="livret-page page01-container">
 
       <h2>Partie A : Données d’identification</h2>
 

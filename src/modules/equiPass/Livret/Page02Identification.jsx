@@ -3,7 +3,7 @@ import "./Page02Identification.css";
 
 export default function Page02Identification({ data }) {
   return (
-    <div className="page02-container">
+    <div className="livret-page page02-container">
 
       <h2 className="page02-title">Signalement du cheval</h2>
 

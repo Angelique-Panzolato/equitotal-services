@@ -3,7 +3,7 @@ import "./Page07SubstancesReglementees.css";
 
 export default function Page07SubstancesReglementees({ data }) {
   return (
-    <div className="page07-container">
+    <div className="livret-page page07-container">
 
       {/* TITRE */}
       <h2>Partie IV – Substances réglementées (Directive 96/22/CE)</h2>

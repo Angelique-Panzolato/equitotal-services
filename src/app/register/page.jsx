@@ -1,9 +1,12 @@
+"use client"; // Obligatoire pour gérer le state (useState) et l'événement onSubmit
+
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import "./Register.css";
+import { useRouter } from "next/navigation"; // Le système de navigation natif de Next.js
+import Link from "next/link"; // Le composant Link optimisé de Next.js
+import "../../styles/Register.css"; // On cible le fichier déplacé dans src/styles/
 
 export default function Register() {
-  const navigate = useNavigate();
+  const router = useRouter(); // On initialise le routeur
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,11 +22,11 @@ export default function Register() {
       role,
     };
 
-    // On le stocke dans le localStorage
+    // On le stocke dans le localStorage (exécuté côté client sans soucis)
     localStorage.setItem("user", JSON.stringify(newUser));
 
-    // On redirige vers la page de connexion
-    navigate("/login");
+    // On redirige vers la page de connexion avec router.push()
+    router.push("/login");
   };
 
   return (
@@ -67,7 +70,8 @@ export default function Register() {
 
       <p className="register-login">
         Vous avez déjà un compte ?{" "}
-        <Link to="/login">Se connecter</Link>
+        {/* Remplacement du 'to=' par 'href=' */}
+        <Link href="/login">Se connecter</Link>
       </p>
     </div>
   );

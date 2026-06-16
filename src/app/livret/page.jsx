@@ -1,18 +1,23 @@
-import "./LivretInfo.css";
-import logo from "../../assets/logo.png";
-import { useNavigate } from "react-router-dom"; 
+"use client"; // Obligatoire pour utiliser useRouter et les événements cliquables
+
+import { useRouter } from "next/navigation"; 
+import Image from "next/image"; 
+import Link from "next/link"; 
+import "../../styles/LivretInfo.css"; // Remonte de 2 niveaux pour aller dans src/styles/
 
 export default function LivretInfo() {
-    const navigate = useNavigate();
+    const router = useRouter();
 
     return (
         <div className="info-wrapper">
-            <button className="back-button" onClick={() => navigate(-1)}>
+            {/* Utilisation de router.back() à la place de navigate(-1) */}
+            <button className="back-button" onClick={() => router.back()}>
                 ← Retour
             </button>    
 
             <div className="info-container">
-                <img src={logo} alt="Logo ETS" className="info-logo" />
+                <Image src="/assets/logo.png" alt="Logo ETS" className="info-logo" width={200} height={100} />
+                
                 <section className="info-hero">
                     <h1 className="info-title">le livret numérique</h1>
                     <p className="info-subtitle">
@@ -32,34 +37,33 @@ export default function LivretInfo() {
                 </section>
 
                 <section className="info-cta">
-                    <a href="/register" className="btn btn-primary">
+                    <Link href="/register" className="btn btn-primary">
                         créer mon livret numérique
-                    </a>
+                    </Link>
                 </section>
 
                 <section className="info-explain">
                     <h3 className="info-explain-title">Un carnet de santé interactif pour vos prestataires santé</h3>
                     <p className="info-explain-text">
-                        Plus besoin de chercher le livret papier au fond de la sellerie. Lors d'un vaccin ou d'un soin, donnez un accès temporaire ou permanent à vs prestatires. Il saisit directement la date, le type de vaccin et le llot sur son smartphone. Votre livret est à jour, certifié et infalsifiable.
+                        Plus besoin de chercher le livret papier au fond de la sellerie. Lors d'un vaccin ou d'un soin, donnez un accès temporaire ou permanent à vos prestataires. Il saisit directement la date, le type de vaccin et le lot sur son smartphone. Votre livret est à jour, certifié et infalsifiable.
                     </p>
                 </section>
 
                 <section className="info-explain">
                     <h3 className="info-explain-title">L'équivalent numérique de votre livret papier toujours dans la poche</h3>
                     <p className="info-explain-text">
-                        Identité, puce électronique, origines, signalement... Toutes les informations officielles de votre cheval vous suivent partout, que ce soit pour un contrôle en compétition, u transport ou une urgence vétérinaire.
+                        Identité, puce électronique, origines, signalement... Toutes les informations officielles de votre cheval vous suivent partout, que ce soit pour un contrôle en compétition, un transport ou une urgence vétérinaire.
                     </p>
                 </section>
 
                 <section className="info-explain">
                     <h3 className="info-explain-title">Un historique complet (médical & carrière)</h3>
                     <p className="info-explain-text">
-                        Gardez une  trace indélébile de la vie de votre cheval: traitements passés, pathologies, maréchalerie, ostéopathes, visites véto... mais aussi son évolution, ses changements de propriétaires et ses résultats en compéition.
+                        Gardez une trace indélébile de la vie de votre cheval: traitements passés, pathologies, maréchalerie, ostéopathes, visites véto... mais aussi son évolution, ses changements de propriétaires et ses résultats en compétition.
                     </p>
                 </section>
 
                 <div className="info-divider"></div>
-
 
                 <section className="info-pro">
                     <h2 className="info-pro-title">Comment ça fonctionne pour vos prestataires ?</h2>
@@ -68,14 +72,13 @@ export default function LivretInfo() {
                     </p>
 
                     <ol>
-                        <li><strong>Vous créez le profil de votre cheval:</strong> Renseignez les inforcmations de bas et le numero de puce de votre équidé.</li>
-                        <li><strong>Vous partagez l'accès en un clic:</strong> Générez un lien ou un QR code à présenter au vétérinaire, maréchal ferrant ou responsable d'écurie.</li>
+                        <li><strong>Vous créez le profil de votre cheval:</strong> Renseignez les informations de base et le numéro de puce de votre équidé.</li>
+                        <li><strong>Vous partagez l'accès en un clic:</strong> Générez un lien ou un QR code à présenter au vétérinaire, maréchal-ferrant ou responsable d'écurie.</li>
                         <li><strong>Ils mettent à jour le livret instantanément:</strong> Une fois l'accès accordé, ils peuvent saisir les soins prodigués, les vaccins administrés et les traitements prescrits. Votre livret est mis à jour en temps réel, accessible à tout moment.</li>
                     </ol>
                 </section>
 
                 <div className="info-divider"></div>
-
 
                 <section className="info-security">
                     <h2 className="info-security-title">Sécurité et confidentialité</h2>
@@ -86,9 +89,8 @@ export default function LivretInfo() {
 
                 <div className="info-divider"></div>
 
-
                 <section className="info-owner">
-                    <h2 className="info-owner-title">Ideal en cas de changement de propriétaire</h2>
+                    <h2 className="info-owner-title">Idéal en cas de changement de propriétaire</h2>
                     <p className="info-owner-text">
                         Le jour où votre cheval change de main, transférez l'intégralité de son historique médical et de sa carrière au nouveau propriétaire en un clic. Le fil de sa vie n'est jamais interrompu.
                     </p>
@@ -96,9 +98,8 @@ export default function LivretInfo() {
 
                 <div className="info-divider"></div>
 
-
                 <section className="info-footer">
-                    <h3 className="info-footer-title">Offrez à votre cheval le suivi numérique qu'il merite dès aujourd'hui!</h3>
+                    <h3 className="info-footer-title">Offrez à votre cheval le suivi numérique qu'il mérite dès aujourd'hui!</h3>
                     <p className="info-footer-text">
                         Rejoignez la nouvelle génération de gestion équine: Centralisez toutes les informations de votre cheval, facilitez la collaboration avec vos prestataires santé et assurez un suivi complet de sa vie.
                     </p>
@@ -106,16 +107,15 @@ export default function LivretInfo() {
                         Créez votre livret numérique dès maintenant et profitez d'une gestion simplifiée et sécurisée de la santé de votre cheval.
                     </p>
 
-                    <button className="btn btn-secondary" onClick={() => window.location.href = "/register"}>
+                    <Link href="/register" className="btn btn-secondary">
                         créer mon livret numérique
-                    </button>
-                    <p className="info-footer-copyright ">
-                        © 2023 Livret Numérique. Tous droits réservés.
+                    </Link>
+                    
+                    <p className="info-footer-copyright">
+                        © 2026 Livret Numérique. Tous droits réservés.
                     </p>
-
-
                 </section>
             </div>
         </div>
-            );
+    );
 }

@@ -3,7 +3,7 @@ import "./Page09ProprieteFEI.css";
 
 export default function Page09ProprieteFEI({ data }) {
   return (
-    <div className="page09-container">
+    <div className="livret-page page09-container">
 
       <h2>Section IV – Renseignements relatifs au droit de propriété (FEI)</h2>
 

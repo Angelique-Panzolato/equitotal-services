@@ -1,5 +1,6 @@
 import React from "react";
-import "../Livret/pageCover.css";
+import "./pageCover.css";
+
 // Logos (à placer dans livret/assets/logos/)
 import logoIfce from "./assets/logos/logo-ifce.png";
 import logoSire from "./assets/logos/logo-sire.png";
@@ -13,23 +14,32 @@ export default function PageCover({ data }) {
       <div className="cover-header">
         <img src={logoIfce} alt="IFCE" className="cover-logo-small" />
         <img src={logoSire} alt="SIRE" className="cover-logo-small" />
-        
+
         {data.race === "Anglo-Arabe" && (
           <img src={logoAngloArabe} alt="Association Nationale de l’Anglo-Arabe" className="cover-logo-small" />
         )}
       </div>
 
       {/* TITLE */}
-      <h1 className="cover-title">
-        DOCUMENT D’IDENTIFICATION<br />
-        d’un équidé
-      </h1>
+      <div className="cover-title-row">
+        <span className="cover-spacer"></span>
+
+        <div className="cover-title-block">
+          <h1 className="cover-title">
+            DOCUMENT D’IDENTIFICATION<span className="cover-subtitle"> d'un équidé</span>
+          </h1>
+
+          <span className="english-title">Identification Document</span><span className="subtitle-english">for equidae</span>
+        </div>
+      </div>
+
+
+
 
       {/* IDENTIFICATION BLOCK */}
       <div className="cover-block">
         <div className="cover-row">
-          <span className="label">Nom :</span>
-          <span className="value">{data.nom}</span>
+          <span className="name-value">{data.nom}</span>
         </div>
 
         <div className="cover-row">

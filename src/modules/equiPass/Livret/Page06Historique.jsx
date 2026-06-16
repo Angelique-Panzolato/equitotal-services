@@ -3,7 +3,7 @@ import "./Page06Historique.css";
 
 export default function Page06Medicaments({ data }) {
   return (
-    <div className="page06-container">
+    <div className="livret-page page06-container">
 
       <h2>Administration de médicaments – Section II</h2>
 

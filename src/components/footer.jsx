@@ -1,16 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./footer.css";
+import Link from "next/link"; // Utilisation de Link pour la navigation interne
+import "../styles/Footer.css"; // Import du fichier CSS pour le style du footer
 
 export default function Footer() {
   return (
     <footer className="main-footer">
       <div className="footer-content">
-        <Link to="/conditions" className="footer-link">
+        <Link href="/conditions" className="footer-link">
             Conditions & Confidentialité
         </Link>
 
-        <Link to="/aide" className="footer-link">
+        <Link href="/aide" className="footer-link">
           Aide
         </Link>
 
