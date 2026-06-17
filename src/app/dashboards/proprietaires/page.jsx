@@ -1,10 +1,16 @@
-
 "use client";
-import React, { useState } from "react";
-import "./proprietaires.css";
+
+import { useState } from "react";
+import { useRouter} from "next/navigation";
+import "./proprietaires.css"; // Importation du CSS local au dossier
+
 
 const Proprietaires = () => {
+  const router = useRouter();
+
   const [search, setSearch] = useState("");
+  const [searchResult, setSearchResult] = useState(null);
+  const [hasSearched, setHasSearched] = useState(false);
   const [selectedTab, setSelectedTab] = useState("equippass");
 
   // MockData provisoire (remplacé plus tard par API IFCE)
@@ -44,6 +50,25 @@ const Proprietaires = () => {
     { id: 2, nom: "Facture clinique - 02/02/2024", type: "PDF" },
   ];
 
+  // Gestion de la recherche de transpondeur / SIRE
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (!search.trim()) return;
+
+    // Recherche par numéro de puce ou numéro SIRE
+    const trouve = chevaux.find(
+      (c) => c.puce === search.trim() || c.sire === search.trim()
+    );
+
+    setSearchResult(trouve || null);
+    setHasSearched(true);
+  };
+
+  // Action temporaire pour la création de livret
+  const handleCreateEquiPass = () => {
+    router.push("/equiPass/createEquiPass");
+  };
+
   return (
     <div className="dashboardOwner">
 
@@ -76,19 +101,69 @@ const Proprietaires = () => {
       {selectedTab === "equippass" && (
         <div className="equippass">
 
+          {/* CTA Principal au-dessus du formulaire */}
+          <div style={{ backgroundColor: "#f0f7ff", padding: "1.5rem", borderRadius: "8px", marginBottom: "2rem", border: "1px solid #cce3ff" }}>
+            <h3 style={{ marginTop: 0, color: "#0056b3" }}>Nouveau compagnon ?</h3>
+            <p style={{ margin: "0.5rem 0 1rem 0" }}>Si votre cheval ne possède pas encore de livret numérique sur la plateforme, créez-le dès maintenant.</p>
+            <button 
+              onClick={handleCreateEquiPass}
+              className="btnViewLivret"
+              style={{ backgroundColor: "#0070f3", color: "white", width: "auto", padding: "0.75rem 1.5rem" }}
+            >
+              ➕ Créer le livret numérique de mon cheval
+            </button>
+          </div>
+
           {/* Recherche SIRE / Puce */}
           <div className="searchSection">
             <h2>Rechercher un cheval</h2>
-            <div className="searchBox">
+            <form onSubmit={handleSearch} className="searchBox">
               <input
                 type="text"
-                placeholder="Numéro SIRE ou numéro de puce"
+                placeholder="Numéro SIRE ou numéro de puce (ex: 250123456789012)"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
-              <button>Rechercher</button>
-            </div>
+              <button type="submit">Rechercher</button>
+            </form>
           </div>
+
+          {/* ZONE DE RÉSULTAT DE RECHERCHE */}
+          {hasSearched && (
+            <div style={{ marginTop: "1.5rem", marginBottom: "2rem" }}>
+              {searchResult ? (
+                /* SCÉNARIO A : Le cheval existe -> Affichage sous forme de Card */
+                <div className="horseCard" style={{ width: "100%", maxWidth: "500px", border: "2px solid #28a745", margin: "0 auto" }}>
+                  <div className="horseAvatar">🐴</div>
+                  <div className="horseInfo">
+                    <span style={{ backgroundColor: "#28a745", color: "white", padding: "0.25rem 0.5rem", borderRadius: "4px", fontSize: "0.8rem", fontWeight: "bold" }}>
+                      ✓ EquiPass Trouvé
+                    </span>
+                    <h3 style={{ marginTop: "0.5rem" }}>{searchResult.nom}</h3>
+                    <p>SIRE : {searchResult.sire}</p>
+                    <p>Puce : {searchResult.puce}</p>
+                  </div>
+                  <button className="btnViewLivret" style={{ marginTop: "1rem" }}>
+                    Ouvrir le livret complet
+                  </button>
+                </div>
+              ) : (
+                /* SCÉNARIO B : Le cheval n'existe pas -> Redirection vers création */
+                <div style={{ backgroundColor: "#fff", border: "1px solid #dc3545", padding: "1.5rem", borderRadius: "8px", maxWidth: "500px", margin: "0 auto", textAlign: "center" }}>
+                  <p style={{ color: "#dc3545", margin: "0 0 1rem 0", fontWeight: "bold" }}>
+                    Aucun EquiPass ne correspond à cet identifiant.
+                  </p>
+                  <button 
+                    onClick={handleCreateEquiPass}
+                    className="btnViewLivret"
+                    style={{ backgroundColor: "#dc3545", color: "white" }}
+                  >
+                    Créer le livret numérique pour ce cheval
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
 
           <p className="infoText">
             Cet espace correspond au livret officiel numérique (IFCE).
@@ -128,14 +203,16 @@ const Proprietaires = () => {
                   )}
                 </div>
 
-                <button className="btnViewLivret">
+                <button onClick={() => router.push(`/equiPass/livret/${c.id}`)}
+                  className="btnViewLivret"
+                  >
                   Ouvrir le livret numérique
                 </button>
               </div>
             ))}
 
             {/* Ajouter un cheval */}
-            <div className="horseCard addCard">
+            <div className="horseCard addCard" onClick={handleCreateEquiPass} style={{ cursor: "pointer" }}>
               <div className="plusIcon">+</div>
               <p>Ajouter un cheval</p>
             </div>
